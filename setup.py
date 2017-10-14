@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 """Distutils setup file"""
 
-import ez_setup
-ez_setup.use_setuptools()
 from setuptools import setup
 
 # Metadata
 PACKAGE_NAME = "ProxyTypes"
 PACKAGE_VERSION = "0.9"
-PACKAGES = ['peak', 'peak.util']
+
 
 def get_description():
     # Get our long description from the documentation
@@ -24,6 +22,7 @@ def get_description():
     f.close()
     return ''.join(lines)
 
+
 setup(
     name=PACKAGE_NAME,
     version=PACKAGE_VERSION,
@@ -34,7 +33,6 @@ setup(
     author_email="peak@eby-sarna.com",
     license="PSF or ZPL",
     test_suite = 'test_proxies',
-    packages = PACKAGES,
-    namespace_packages = PACKAGES,
+    py_modules=['ProxyTypes'],
 )
 
